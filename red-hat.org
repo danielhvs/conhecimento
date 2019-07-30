@@ -1,55 +1,58 @@
 * Comandos linux
-
-Red Hat usar rpm e yum como package manager.
-
-ssh-copy-id                   usuário@host Adiciona a sua chave para o host e usuário daquele host; serve para ativar logins sem senha com uso de chaves.
-cal                           Exibe um calendário do mês atual.
-w                             Exibe quem está online.
-df                            Exibe o uso do disco.
-du                            Exibe o uso do espaço em um diretório.
-free                          Exibe o uso da memória e swap.
-whois                         domínio Retorna informações sobre o domínio (substituir a variável domínio pelo endereço de um site ou o número IP).
-dig                           host Retorna informações de DNS para o domínio (substituir a variável host pelo domínio de um site ou o número IP). 
-arch                          Exibe a arquitetura da máquina (1).
-uname -m                      Exibe a arquitetura da máquina (2).
-uname -r                      Exibe versão do kernel usada.
-dmidecode -q                  Exibe os componentes do sistema (hardware).
-hdparm -i /dev/hda            Exibe as características de um disco rígido.
-hdparm -tT /dev/das           Executa teste de leitura em um disco rígido.
-iconv                         convert text from one character encoding to another
-groupadd                      nome_do_grupo Cria um novo grupo.
-groupdel                      nome_do_grupo Exclui um grupo.
-groupmod -n                   novo_nome_do_grupo viejo_nome_do_novo_grupo Renomeia um grupo.
-useradd -c "Name Surname" -g -d /home/user1 -s /bin/bash user1 Cria um novo usuário “admin” do grupo.
-useradd user1                 Cria um novo usuário.
-userdel -r user1              Exclui um usuário (‘-r’ elimina o diretório Home).
-usermod -c “User FTP” -g system -d /ftp/user1 -s /bin/nologin user1 Altera os atributos do usuário.
-passwd                        Altera a senha.
-passwd user1                  Altera a senha do usuário (apenas pelo root).
-chage -E 2016-06-22 user1     Define um limite de tempo para a senha do usuário. Neste caso, ele diz que a chave expira a 22 de junho de 2016.
-chmod ugo+rwx directory1      Define permissões de leitura®, gravar (w) e executar (x) para o dono (u), grupo (g) e outros (ou) no diretório ‘arquivo1’. 
-chmod go-rwx directory1       Remove a permissão de leitura, gravação (w) e grupo de implementação (x) (g) e outros (ou) no diretório ‘arquivo1’.
-chown user1 file1             Altera o proprietário de um arquivo.
-chown -R user1 directory1     Recursivo
-chgrp                         group1 file1 Altera o grupo de arquivos.
-lsattr                        Exibe atributos especiais.
-chattr                        - change file attributes on a Linux file system
-bunzip2                       file1.bz2 Descompacta um arquivo chamado ‘file1.bz2’.
-bzip2                         file1 Comprime um arquivo chamado ‘file1’.
-gunzip                        file1.gz Descompacta um arquivo chamado ‘file1.gz’.
-gzip                          file1 Comprime um arquivo chamado ‘file1’.
-rar
-unrar
-tar cf cria
-tar xf descompacta
-rpm -ivh package.rpm          Instala um pacote rpm.
-rpm -e package_name.rpm       'e' de ERASE Remove um pacote rpm.
-yum install                   package_name Baixa e instala um pacote rpm.
-yum localinstall              package_name.rpm Irá instalar um RPM e vai tentar resolver todas as dependências para você, usando seus repositórios.
-yum update package_name.rpm   Atualiza todos os pacotes rpm instalados no sistema.
-yum update package_name       Upgrade / atualiza um pacote rpm.
-yum remove package_name       Remove um pacote rpm.
-yum list                      Lista todos os pacotes instalados no sistema.
-tac                           file1 Exibe o conteúdo de um arquivo a partir da última linha.
-modprobe                      Add and remove modules from the Linux Kernel
-dmesg                         Exibe os eventos inerentes no processo de BOOT do kernel.
+** Red Hat usar rpm e yum como package manager.
+** Comandos:
+|----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------|
+| Comando                                                        | O que faz                                                                                                                   |
+|----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------|
+| ssh-copy-id                                                    | usuário@host Adiciona a sua chave para o host e usuário daquele host; serve para ativar logins sem senha com uso de chaves. |
+| cal                                                            | Exibe um calendário do mês atual.                                                                                           |
+| w                                                              | Exibe quem está online.                                                                                                     |
+| df                                                             | Exibe o uso do disco.                                                                                                       |
+| du                                                             | Exibe o uso do espaço em um diretório.                                                                                      |
+| free                                                           | Exibe o uso da memória e swap.                                                                                              |
+| whois                                                          | domínio Retorna informações sobre o domínio (substituir a variável domínio pelo endereço de um site ou o número IP).        |
+| dig                                                            | host Retorna informações de DNS para o domínio (substituir a variável host pelo domínio de um site ou o número IP).         |
+| arch                                                           | Exibe a arquitetura da máquina (1).                                                                                         |
+| uname -m                                                       | Exibe a arquitetura da máquina (2).                                                                                         |
+| uname -r                                                       | Exibe versão do kernel usada.                                                                                               |
+| dmidecode -q                                                   | Exibe os componentes do sistema (hardware).                                                                                 |
+| hdparm -i /dev/hda                                             | Exibe as características de um disco rígido.                                                                                |
+| hdparm -tT /dev/das                                            | Executa teste de leitura em um disco rígido.                                                                                |
+| iconv                                                          | convert text from one character encoding to another                                                                         |
+| groupadd                                                       | nome_do_grupo Cria um novo grupo.                                                                                           |
+| groupdel                                                       | nome_do_grupo Exclui um grupo.                                                                                              |
+| groupmod -n                                                    | novo_nome_do_grupo viejo_nome_do_novo_grupo Renomeia um grupo.                                                              |
+| useradd -c "Name Surname" -g -d /home/user1 -s /bin/bash user1 | Cria um novo usuário “admin” do grupo.                                                                                      |
+| useradd user1                                                  | Cria um novo usuário.                                                                                                       |
+| userdel -r user1                                               | Exclui um usuário (‘-r’ elimina o diretório Home).                                                                          |
+| usermod -c “User FTP” -g syst                                  | em -d /ftp/user1 -s /bin/nologin user1 Altera os atributos do usuário.                                                      |
+| passwd                                                         | Altera a senha.                                                                                                             |
+| passwd user1                                                   | Altera a senha do usuário (apenas pelo root).                                                                               |
+| chage -E 2016-06-22 user1                                      | Define um limite de tempo para a senha do usuário. Neste caso, ele diz que a chave expira a 22 de junho de 2016.            |
+| chmod ugo+rwx directory1                                       | Define permissões de leitura®, gravar (w) e executar (x) para o dono (u), grupo (g) e outros (ou) no diretório ‘arquivo1’.  |
+| chmod go-rwx directory1                                        | Remove a permissão de leitura, gravação (w) e grupo de implementação (x) (g) e outros (ou) no diretório ‘arquivo1’.         |
+| chown user1 file1                                              | Altera o proprietário de um arquivo.                                                                                        |
+| chown -R user1 directory1                                      | Recursivo                                                                                                                   |
+| chgrp                                                          | group1 file1 Altera o grupo de arquivos.                                                                                    |
+| lsattr                                                         | Exibe atributos especiais.                                                                                                  |
+| chattr                                                         | - change file attributes on a Linux file system                                                                             |
+| bunzip2                                                        | file1.bz2 Descompacta um arquivo chamado ‘file1.bz2’.                                                                       |
+| bzip2                                                          | file1 Comprime um arquivo chamado ‘file1’.                                                                                  |
+| gunzip                                                         | file1.gz Descompacta um arquivo chamado ‘file1.gz’.                                                                         |
+| gzip                                                           | file1 Comprime um arquivo chamado ‘file1’.                                                                                  |
+| rar                                                            |                                                                                                                             |
+| unrar                                                          |                                                                                                                             |
+| tar cf cria                                                    |                                                                                                                             |
+| tar xf descompacta                                             |                                                                                                                             |
+| rpm -ivh package.rpm                                           | Instala um pacote rpm.                                                                                                      |
+| rpm -e package_name.rpm                                        | 'e' de ERASE Remove um pacote rpm.                                                                                          |
+| yum install                                                    | package_name Baixa e instala um pacote rpm.                                                                                 |
+| yum localinstall                                               | package_name.rpm Irá instalar um RPM e vai tentar resolver todas as dependências para você, usando seus repositórios.       |
+| yum update package_name.rpm                                    | Atualiza todos os pacotes rpm instalados no sistema.                                                                        |
+| yum update package_name                                        | Upgrade / atualiza um pacote rpm.                                                                                           |
+| yum remove package_name                                        | Remove um pacote rpm.                                                                                                       |
+| yum list                                                       | Lista todos os pacotes instalados no sistema.                                                                               |
+| tac                                                            | file1 Exibe o conteúdo de um arquivo a partir da última linha.                                                              |
+| modprobe                                                       | Add and remove modules from the Linux Kernel                                                                                |
+| dmesg                                                          | Exibe os eventos inerentes no processo de BOOT do kernel.                                                                   |
+|----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------|
